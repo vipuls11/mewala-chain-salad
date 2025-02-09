@@ -9,11 +9,11 @@ import Testimonialslider from '../components-section/Testimonialslider'
 const Home = () => {
   return (
     <div>
-        {/* <BannerSection/>
+        <BannerSection/>
        <Whywechoose/> 
        <Foodlist/>
        <FoodShowTabs/>
-       <AlltypeEventOrder/> */}
+       <AlltypeEventOrder/>
        <Testimonialslider/>
     </div>
   )

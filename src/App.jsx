@@ -9,9 +9,9 @@ function App() {
 
   return (
     <div className='w-full bg-blue-50'>
-     {/* <Navbar/> */}
+     <Navbar/>
       <Home/>
-      {/* <Footer/> */}
+      <Footer/>
     </div>
   )
 }
