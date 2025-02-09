@@ -1,0 +1,23 @@
+.main_header{
+    transition: all 0.2s cubic-bezier(0.31, 0.08, 0, 1.96);
+    /* background: #495057; */
+    background: #3A0CA3;
+    /* opacity: 0.4; */
+    color:#fff;
+}
+.Responsive_header{
+    /* background: #495057; */
+    background: #3A0CA3;
+    color:#fff;
+}
+
+.menu:hover .sub_menu {
+    display: block;
+}  
+
+.product_offer{
+    color:#fff !important;
+    outline: none !important;
+    text-decoration: none !important;
+}
+

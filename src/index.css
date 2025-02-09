@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.slick-slide > div {
+    margin: 0 10px;
+}
+
+
+.slick-prev, .slick-next {
+    width: 40px !important;
+    height: 40px !important;
+}
+.slick-prev:before, .slick-next:before {
+    font-size: 40px !important;
+    color: white !important;
+
+}
