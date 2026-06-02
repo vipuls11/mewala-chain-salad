@@ -13,6 +13,7 @@
   background-position: center;
   background-repeat: no-repeat;
   color: #fff;
+  justify-content: space-around;
 }
 
 .hero-overlay {
