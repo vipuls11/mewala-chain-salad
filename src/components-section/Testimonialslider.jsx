@@ -4,11 +4,22 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { testmonial } from "../datalistening/testmonial";
-import { FaStar } from 'react-icons/fa';
+import { FaChevronLeft, FaChevronRight, FaStar } from 'react-icons/fa';
+
+const PrevArrow = ({ onClick }) => (
+  <button type="button" className="testimonial-arrow testimonial-arrow-prev" onClick={onClick} aria-label="Previous testimonial">
+    <FaChevronLeft />
+  </button>
+);
+
+const NextArrow = ({ onClick }) => (
+  <button type="button" className="testimonial-arrow testimonial-arrow-next" onClick={onClick} aria-label="Next testimonial">
+    <FaChevronRight />
+  </button>
+);
 
 const Testimonialslider = () => {
-  const [userreview, setUserreview] = useState(testmonial);
-  console.log(userreview, "Testimonial");
+  const [userreview] = useState(testmonial)
   const settings = {
     dots: true,
     infinite: true,
@@ -16,78 +27,56 @@ const Testimonialslider = () => {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-    autoplaySpeed: 2000,
-
+    autoplaySpeed: 2500,
+    arrows: true,
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
     responsive: [
-        {
-            breakpoint: 1200, // For screens less than or equal to 1024px
-            settings: {
-              slidesToShow: 3, // Show 2 slides
-            },
-          },
-        {
-            breakpoint: 1100, // For screens less than or equal to 1024px
-            settings: {
-              slidesToShow: 2, // Show 2 slides
-            },
-          },   
-      {
-        breakpoint: 768, // For screens less than or equal to 768px
-        settings: {
-          slidesToShow: 1, // Show 1 slide
-        },
-      },
-      {
-        breakpoint: 480, // For screens less than or equal to 768px
-        settings: {
-          slidesToShow: 1, // Show 1 slide
-        },
-      },
+      { breakpoint: 1200, settings: { slidesToShow: 3 } },
+      { breakpoint: 1100, settings: { slidesToShow: 2 } },
+      { breakpoint: 768, settings: { slidesToShow: 1 } },
+      { breakpoint: 480, settings: { slidesToShow: 1 } },
     ],
-  };
+  }
 
-  const maxLength = 250;
   return (
-  <div className="bg-black  py-20">
-      <div className="w-[90%] m-auto ">
-      <div className="section-title">
-        <h2>Testimonialslider</h2>
-        <p>Check Our Tasty Menu</p>
-      </div>
+    <section className="testimonial-section py-20">
+      <div className="w-[92%] mx-auto">
+        <div className="section-title text-center md:text-left">
+          <h2>Testimonials</h2>
+          <p>What Our Guests Say</p>
+          <p className="mt-3 text-[0.98rem] font-medium leading-7 text-slate-600">Real feedback from guests who enjoy the freshness, flavor, and friendly experience at Mewala Chain Salad.</p>
+        </div>
 
-      <div className="slider-container">
-        <Slider {...settings} className="px-4">
-          {testmonial.map((testimonialelem) => {
-            const { id, name, info, linkImg, rating } = testimonialelem;
-            return (
-              <div id={id} key={id} className="bg-black h-80  overflow-visible">
-                <div className="relative  border-2 border-blue-500 p-5 bg-white">
-                <h3>{name}</h3>
-                  <p className="-5" maxLength={maxLength}>{info.length > maxLength ? info.substring(0, maxLength) + '...' : info}</p>
-                  <div className="flex gap-1">
-              {/* Render star icons based on the rating */}
-              {[...Array(5)].map((_, index) => (
-                <FaStar
-                  key={index}
-                  color={index < rating ? "#FFD700" : "#ccc"} // Gold for filled stars, gray for empty stars
-                />
-              ))}
-            </div>
-                <img
-                    src={linkImg}
-                    alt={name}
-                    className="testimonial_image w-28 h-28 bg-center rounded-full absolute -bottom-[72px] right-5 border-2 border-blue-500"
-                  
-                  />
-                </div>
-              </div>
-            );
-          })}
-        </Slider>
+        <div className="slider-container testimonial-slider-shell">
+          <Slider {...settings} className="px-1 md:px-2">
+            {userreview.map((testimonialelem) => {
+              const { id, name, role, info, linkImg, rating } = testimonialelem
+              return (
+                <article id={id} key={id} className="px-2 py-2">
+                  <div className="testimonial-card rounded-[28px] border border-orange-100 bg-white p-6 shadow-[0_18px_45px_-18px_rgba(124,58,237,0.35)]">
+                    <div className="mb-4 flex items-center justify-between">
+                      <div>
+                        <h3 className="text-xl font-bold text-slate-800">{name}</h3>
+                        <p className="text-sm text-orange-500">{role}</p>
+                      </div>
+                      <div className="flex gap-1">
+                        {[...Array(5)].map((_, index) => (
+                          <FaStar key={index} color={index < rating ? '#f59e0b' : '#e5e7eb'} size={16} />
+                        ))}
+                      </div>
+                    </div>
+                    <p className="text-slate-600 leading-7">“{info}”</p>
+                    <img src={linkImg} alt={name} className="mt-5 h-16 w-16 rounded-full border border-orange-200 object-cover shadow-md" />
+                  </div>
+                </article>
+              )
+            })}
+          </Slider>
+        </div>
       </div>
-    </div>
-  </div>
-  );
-};
+    </section>
+  )
+}
 
 export default Testimonialslider;

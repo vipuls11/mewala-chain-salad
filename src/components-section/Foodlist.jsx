@@ -1,81 +1,58 @@
 import React, { useState } from 'react'
-import '../css/Foodlist.css'; // Import the custom CSS
-import { dataList } from '../datalistening/datalist';
+import '../css/Foodlist.css'
+import { dataList } from '../datalistening/datalist'
 
 const Foodlist = () => {
-    const [category, setCategory] = useState(dataList);
-    const [activeBtn, setActiveBtn] = useState('All'); // State to track active button
-    // const uniqueNumbers = [...new Set(dataList)];
+  const [category, setCategory] = useState(dataList)
+  const [activeBtn, setActiveBtn] = useState('All')
 
-    
-    // Create a new Set to track unique `id` values
-    const seenIds = new Set();
-    
-    // Filter the array to only keep objects with unique `id`
-    const uniqueArr = dataList.filter(item => {
-        if (!seenIds.has(item.kind)) {
-            seenIds.add(item.kind);
-            return true;
-        }
-        return false;
-    });
-    console.log(uniqueArr, "kinds")
+  const uniqueArr = [...new Set(dataList.map((item) => item.kind))]
 
-
-
-    const handleBtns = (e) => {
-    let word=e.target.value;
-    setActiveBtn(word); // Set active button value
-    if(word === "All"){
-      setCategory(dataList)
-    }
-    else if(word === "Cars") {
-      const filtered = dataList.filter(item=>item.kind === "Cars");
-      setCategory(filtered)
-    }
-    else if(word === "Views") {
-      const filtered = dataList.filter(item=>item.kind === "Views");
-      setCategory(filtered)
-    }
+  const handleBtns = (e) => {
+    const word = e.target.value
+    setActiveBtn(word)
+    setCategory(word === 'All' ? dataList : dataList.filter((item) => item.kind === word))
   }
- 
+
   return (
-    <>
-      <section>
-        <div className=' w-[90%] m-auto pb-20'>
-        <div className="section-title">
+    <section id="menu" className="menu-section">
+      <div className="w-[92%] mx-auto pb-20">
+        <div className="section-title text-center md:text-left">
           <h2>Menu</h2>
-          <p>Check Our Tasty Menu</p>
+          <p>Fresh picks from Mewala Chain Salad</p>
+          <p className="mt-3 text-[0.98rem] font-medium leading-7 text-slate-600">A real taste of our salads, wraps, drinks, and sides — all made to feel fresh, colorful, and restaurant-ready.</p>
         </div>
-        <div className='flex'>
-        <div className='flex flex-col float-left w-72'>
-            <button value="All" onClick={handleBtns}  className={`${activeBtn === 'All' ? 'active' : ''} text-left py-2 px-4`}>All</button>
-            {
-                uniqueArr.map((btn)=><button value={btn.kind} onClick={handleBtns} className={`${activeBtn === btn.kind ? 'active' : ''} text-left py-2 px-4`}>{btn.kind}</button>)
-            }
-            {/* <button value="All" onClick={handleBtns}>All</button>
-            <button value="Cars" onClick={handleBtns}>Cars</button>
-            <button value="Views" onClick={handleBtns}>Views</button> */}
-          </div>
- 
-          <div className='grid lg:grid-cols-3 md:grid-cols-2 gap-10 px-10'>
+
+        <div className="menu-layout">
+          <aside className="menu-filter-panel">
+            <button value="All" onClick={handleBtns} className={`filter-btn ${activeBtn === 'All' ? 'active' : ''}`}>
+              All Items
+            </button>
+            {uniqueArr.map((btn) => (
+              <button key={btn} value={btn} onClick={handleBtns} className={`filter-btn ${activeBtn === btn ? 'active' : ''}`}>
+                {btn}
+              </button>
+            ))}
+          </aside>
+
+          <div className="menu-grid">
             {category.map((item) => (
-              <div key={item.id}>
-                <div className='flex gap-5'>
-                  <img src={item.linkImg} alt={item.name}  className='w-24 h-24 rounded-full'/>
-                  <div>
-                    <h1>{item.name}</h1>
-                    <p>{item.kind}</p>
-                     <p>{item.info} </p>
+              <article key={item.id} className="menu-card">
+                <img src={item.linkImg} alt={item.name} className="menu-card-image" />
+                <div className="menu-card-body">
+                  <div className="menu-card-top">
+                    <span className="menu-tag">{item.kind}</span>
+                    <span className="menu-price">{item.price}</span>
                   </div>
+                  <h3 className="menu-card-title">{item.name}</h3>
+                  <p className="menu-card-info">{item.info}</p>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>
-        </div>
-        </section>
-    </>
+      </div>
+    </section>
   )
 }
 

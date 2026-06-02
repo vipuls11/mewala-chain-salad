@@ -1,41 +1,42 @@
 import React from 'react';
-import '../css/BannerSection.css'; // Import the custom CSS
+import '../css/BannerSection.css';
 
 const BannerSection = () => {
   return (
-    /* ======= Hero Section ======= */
-    <section 
-      id="hero" 
-      className="relative w-full h-screen bg-cover bg-center opacity-90 bg-black"
-      style={{ backgroundImage: "url('/logo/chain-banner.jpg')" }} // Set the background image here
+    <section
+      id="hero"
+      className="hero-section"
+      style={{ backgroundImage: "linear-gradient(135deg, rgba(15, 23, 42, 0.76), rgba(88, 28, 135, 0.66)), url('/logo/chain-banner.jpg')" }}
     >
-      <div className="container flex justify-center items-center w-full h-full">
-        <div className="restaurantly flex items-end gap-10">
-          <div>
-            <h1>
-              Welcome to <span>Restaurantly</span>
-            </h1>
-            <h2>Delivering great food for more than 18 years!</h2>
+      <div className="hero-overlay" />
+      <div className="container hero-inner">
+        <div className="hero-card">
+          <p className="hero-chip">Fresh • Healthy • Full of Flavor</p>
+          <h1>
+            Welcome to <span>Mewala Chain Salad</span>
+          </h1>
+          <h2>Fresh salads, wraps, soups, and daily specials crafted for every craving.</h2>
 
-            <div className="btns">
-              <a href="#menu" className="btn-menu animated fadeInUp scrollto">
-                Our Menu
-              </a>
-              <a href="#book-a-table" className="btn-book animated fadeInUp scrollto">
-                Book a Table
-              </a>
-            </div>
+          <div className="hero-stats">
+            <span>Jain & Non-Jain Options</span>
+            <span>Open 4 PM – 11 PM</span>
+            <span>Party Orders Available</span>
           </div>
-          <div data-aos="zoom-in" data-aos-delay="200">
-            <a
-              href="https://www.youtube.com/watch?v=GlrxcuEDyF8"
-              className="glightbox play-btn"
-            ></a>
+
+          <div className="btns">
+            <a href="#menu" className="btn-menu">Explore Menu</a>
+            <a href="#book-a-table" className="btn-book">Book a Party</a>
           </div>
         </div>
+
+        <aside className="hero-side-card">
+          <p className="mini-label">Today’s Favorite</p>
+          <h3>Paneer Salads & Crunchy Wraps</h3>
+          <p>Light, vibrant, and made with fresh ingredients for a wholesome meal.</p>
+          <a href="#menu" className="mini-link">See our best sellers →</a>
+        </aside>
       </div>
     </section>
-    /* End Hero */
   );
 };
 

@@ -1,0 +1,190 @@
+.contact-page-shell {
+  padding: 2rem 1rem 4rem;
+  background:
+    radial-gradient(circle at top, rgba(251, 191, 36, 0.18), transparent 22%),
+    linear-gradient(135deg, #eff6ff 0%, #fff 45%, #f8fafc 100%);
+}
+
+.contact-hero-card,
+.contact-card,
+.contact-cta-card,
+.contact-highlight-card {
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 24px 50px -28px rgba(30, 41, 59, 0.35);
+}
+
+.contact-hero-card {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 1rem;
+  padding: 1rem;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.98) 0%, rgba(254,249,195,0.35) 100%);
+}
+
+.contact-eyebrow,
+.contact-label {
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #ea580c;
+}
+
+.contact-copy h1,
+.contact-cta-card h2 {
+  color: #0f172a;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.08;
+  margin-bottom: 0.75rem;
+}
+
+.contact-intro,
+.contact-card p,
+.contact-cta-card p,
+.contact-highlight-card p {
+  color: #475569;
+  line-height: 1.7;
+}
+
+.contact-pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.contact-pill-row span {
+  border-radius: 999px;
+  background: linear-gradient(135deg, #fff7ed, #ffedd5);
+  color: #9a4b00;
+  padding: 0.45rem 0.75rem;
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+
+.contact-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.contact-mini-card {
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(249, 115, 22, 0.18);
+  padding: 0.85rem;
+  display: grid;
+  gap: 0.2rem;
+}
+
+.contact-mini-card strong { color: #111827; font-size: 0.98rem; }
+.contact-mini-card span { color: #475569; font-size: 0.92rem; }
+.contact-icon { color: #ea580c; margin-right: 0.25rem; }
+
+.contact-highlight-card {
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+  background: linear-gradient(135deg, #111827, #1f2937);
+  color: #fff;
+}
+
+.contact-visual-image {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  object-fit: cover;
+  opacity: 0.35;
+}
+
+.contact-overlay-box {
+  position: absolute;
+  inset: auto 1rem 1rem 1rem;
+  border-radius: 22px;
+  background: rgba(15, 23, 42, 0.82);
+  border: 1px solid rgba(255,255,255,0.16);
+  backdrop-filter: blur(8px);
+  padding: 0.95rem;
+}
+
+.contact-highlight-card h3,
+.contact-card h3 {
+  color: #fff;
+  margin-bottom: 0.35rem;
+}
+
+.contact-card h3 { color: #111827; }
+
+.contact-map-button,
+.contact-cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #fb923c, #ea580c);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  margin-top: 0.75rem;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.contact-card {
+  padding: 1rem;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 32px -24px rgba(30, 41, 59, 0.35);
+}
+
+.contact-card a {
+  display: block;
+  color: #ea580c;
+  font-weight: 700;
+  text-decoration: none;
+  margin-bottom: 0.25rem;
+}
+
+.contact-card--wide { grid-column: span 1; }
+
+.contact-cta-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  margin-top: 1rem;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.98), rgba(255,247,237,0.92));
+}
+
+@media (max-width: 1080px) {
+  .contact-hero-card,
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-hero-card,
+  .contact-grid,
+  .contact-cta-card {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

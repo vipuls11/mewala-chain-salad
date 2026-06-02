@@ -1,88 +1,100 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../../css/Navbar.css'
-import { Link } from '@mui/material'
-import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import MenuIcon from '@mui/icons-material/Menu';
+import { Link, useLocation } from 'react-router-dom'
+import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp'
+import ChevronRightIcon from '@mui/icons-material/ChevronRight'
+import MenuIcon from '@mui/icons-material/Menu'
+import CloseIcon from '@mui/icons-material/Close'
 
 const Navbar = () => {
-  const [showData, setShowData] = useState(false);
-   const image = "/logo/logo-removebg-preview.png";
-  console.log(image)
+  const [showData, setShowData] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+  const location = useLocation()
+  const image = '/logo/logo-removebg-preview.png'
 
- const  humburger = ()=>{
-      // alert('hello')
-    
-      return (
-        <>
-          {showData && (
-            <div className='Responsive_header fixed top-0 left-0 h-screen w-80  lg:hidden block'>
-              <img src={image} alt="Header_logo"  className='w-100'/> 
-              <p>hellooo</p>
-            </div>
-          )}
-        </>
-      );
-      
-  }
+  const isActive = (path) => location.pathname === path
 
-  const toggleData = () => {
-    setShowData(prev => !prev);
-  }
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 12)
+    handleScroll()
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const toggleData = () => setShowData(prev => !prev)
+
   return (
     <>
-    <nav className='main_header flex gap-20  lg:justify-center justify-between items-center border-b py-2 lg:px-0 px-4'>
-      <div>
-   <Link to="">
-   <div className='relative'>
-           <img src={image} alt="Header_logo"  className='w-72 '/>  
-           <img src="/logo/!Veg_symbol.svg" alt="Header_logo"  className='w-8 absolute top-0 -right-5'/>  
-           </div>
-  
-   </Link>   
-    </div> 
-    <div className="lg:block hidden">
-        <ul className='flex justify-around gap-5 items-center'>
-            <li className='px-2 py-6 hover:bg-orange-300 font-semibold'>About Us</li>
-            <li className={`menu relative px-2 py-6 text-black font-semibold`}><Link className='product_offer cursor-pointer text-black underline-none'>Menu </Link>
-                <ul className='sub_menu absolute top-[72px]  w-60 left-0 font-thin bg-white border-t-2 border-t-orange-300 hidden shadow-lg'>
-                  <li><div className='absolute top-[-17px] left-24 text-orange-300'><ArrowDropUpIcon/></div></li>
-                    <li className='flex items-center  mb-2 py-2  hover:bg-orange-300 text-medium border-b borber-b-grey-300'><span><ChevronRightIcon/></span>Mutual Funds</li>
-                    <li className='flex items-center  mb-2 py-2  hover:bg-orange-300 text-medium border-b borber-b-grey-300'><span className=''><ChevronRightIcon/></span> Insurance</li>
-                    <li className='flex items-center  mb-2 py-2  hover:bg-orange-300 text-medium border-b borber-b-grey-300'><span><ChevronRightIcon/></span> Stock Broking</li>
-                    <li className='flex items-center  mb-2 py-2  hover:bg-orange-300 text-medium border-b borber-b-grey-300'><span><ChevronRightIcon/></span> Fixed Income Products</li>
-                    <li className='flex items-center  mb-2 py-2  hover:bg-orange-300 text-medium border-b borber-b-grey-300'><span><ChevronRightIcon/></span> Property</li>
-                    <li className='flex items-center py-2  hover:bg-orange-300 text-medium border-b borber-b-grey-300'><span><ChevronRightIcon/></span> Loan</li>
-                  
-                </ul>
-            </li>
-            <li className='menu relative px-2 py-6  hover:bg-orange-300 font-semibold'>Gallery 
-            <ul className='sub_menu absolute top-[72px]  w-[400px] left-0 font-thin bg-white border-t-2 border-t-orange-300 hidden shadow-lg'>
-                  <li><div className='absolute top-[-17px] left-24 text-orange-300'><ArrowDropUpIcon/></div></li>
-                    <li className='flex items-center  mb-2 py-2  hover:bg-orange-300 text-medium border-b borber-b-grey-300'><span><ChevronRightIcon/></span>Mutual Funds</li>
-                    <li className='flex items-center  mb-2 py-2  hover:bg-orange-300 text-medium border-b borber-b-grey-300'><span className=''><ChevronRightIcon/></span> Insurance</li>
-                    <li className='flex items-center  mb-2 py-2  hover:bg-orange-300 text-medium border-b borber-b-grey-300'><span><ChevronRightIcon/></span> Stock Broking</li>
-                    <li className='flex items-center  mb-2 py-2  hover:bg-orange-300 text-medium border-b borber-b-grey-300'><span><ChevronRightIcon/></span> Fixed Income Products</li>
-                    <li className='flex items-center  mb-2 py-2  hover:bg-orange-300 text-medium border-b borber-b-grey-300'><span><ChevronRightIcon/></span> Property</li>
-                    <li className='flex items-center py-2  hover:bg-orange-300 text-medium border-b borber-b-grey-300'><span><ChevronRightIcon/></span> Loan</li>                 
-                </ul>
-            </li>
-    
-            <li className='px-2 py-6 hover:bg-orange-300 font-semibold'>Contact Us </li>
-        </ul>
-    </div> 
+      <div
+        className={`mobile-backdrop ${showData ? 'show' : ''}`}
+        onClick={toggleData}
+        aria-hidden="true"
+      />
 
-    <div className='lg:block hidden'>
-        <button className='bg-transparent px-4 py-2 shadow-xl rounded-lg  border border-orange-300'>Click ME</button>
-    </div>
-    <div class='lg:hidden  block' >
-      <button><span className='h-[4px] w-[50px] text-red-700' onClick={toggleData}><MenuIcon/></span></button>
-    </div>
-   
-    </nav>
-    
-    {humburger()}
-    
+      <nav className={`main_header ${isScrolled ? 'scrolled' : ''}`}>
+        <Link to="/" className="brand-link" onClick={() => setShowData(false)}>
+          <div className="brand-wrap">
+            <img src={image} alt="Header_logo" className="brand-logo" />
+            <img src="/logo/!Veg_symbol.svg" alt="Veg symbol" className="veg-badge" />
+          </div>
+        </Link>
+
+        <div className="lg:block hidden">
+          <ul className="nav-links">
+            <li className={`nav-item ${isActive('/about') ? 'nav-active' : ''}`}>
+              <Link to="/about" className="text-white hover:text-orange-200">About Us</Link>
+            </li>
+            <li className={`menu nav-item ${isActive('/menu') ? 'nav-active' : ''}`}>
+              <Link to="/menu" className="product_offer">Menu</Link>
+              {/* <ul className="sub_menu">
+                <li><div className="sub_menu-tip"><ArrowDropUpIcon /></div></li>
+                <li className="sub_menu-item"><Link to="/menu" onClick={() => setShowData(false)}><span><ChevronRightIcon /></span>Fresh Salads & Wraps</Link></li>
+                <li className="sub_menu-item"><Link to="/menu" onClick={() => setShowData(false)}><span><ChevronRightIcon /></span>Drinks & Sides</Link></li>
+                <li className="sub_menu-item"><Link to="/menu" onClick={() => setShowData(false)}><span><ChevronRightIcon /></span>Family-friendly Picks</Link></li>
+              </ul> */}
+            </li>
+            <li className={`menu nav-item ${isActive('/gallery') ? 'nav-active' : ''}`}>
+              <Link to="/gallery" className="product_offer">Gallery</Link>
+              {/* <ul className="sub_menu gallery-menu">
+                <li><div className="sub_menu-tip"><ArrowDropUpIcon /></div></li>
+                <li className="sub_menu-item"><Link to="/gallery" onClick={() => setShowData(false)}><span><ChevronRightIcon /></span>Fresh Ingredients</Link></li>
+                <li className="sub_menu-item"><Link to="/gallery" onClick={() => setShowData(false)}><span><ChevronRightIcon /></span>Chef Specials</Link></li>
+                <li className="sub_menu-item"><Link to="/gallery" onClick={() => setShowData(false)}><span><ChevronRightIcon /></span>Healthy Picks</Link></li>
+              </ul> */}
+            </li>
+            <li className={`nav-item ${isActive('/contact') ? 'nav-active' : ''}`}>
+              <Link to="/contact" className="text-white hover:text-orange-200">Contact Us</Link>
+            </li>
+          </ul>
+        </div>
+
+        <div className="lg:block hidden">
+          <button className="cta-button">Order Now</button>
+        </div>
+
+        <button
+          type="button"
+          className={`mobile-toggle ${showData ? 'active' : ''}`}
+          onClick={toggleData}
+          aria-label="Toggle menu"
+        >
+          {showData ? <CloseIcon /> : <MenuIcon />}
+        </button>
+      </nav>
+
+      <aside className={`Responsive_header ${showData ? 'open' : ''}`}>
+        <div className="mobile-brand">
+          <img src={image} alt="Header_logo" className="brand-logo" />
+        </div>
+        <p className="mobile-copy">Fresh salads, wraps, soups & more made for every craving.</p>
+        <ul className="mobile-nav-list">
+          <li className={isActive('/about') ? 'nav-active' : ''}><Link to="/about" onClick={toggleData}>About Us</Link></li>
+          <li className={isActive('/menu') ? 'nav-active' : ''}><Link to="/menu" onClick={toggleData}>Menu</Link></li>
+          <li className={isActive('/gallery') ? 'nav-active' : ''}><Link to="/gallery" onClick={toggleData}>Gallery</Link></li>
+          <li className={isActive('/contact') ? 'nav-active' : ''}><Link to="/contact" onClick={toggleData}>Contact Us</Link></li>
+        </ul>
+        <button className="cta-button full-width">Start Your Order</button>
+      </aside>
     </>
   )
 }

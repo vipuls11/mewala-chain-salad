@@ -1,52 +1,53 @@
 export const dataList = [
-    {
-      id: 1,
-      kind: "Views",
-      name: 'View 1',
-      info: 'Lorem ipsum dolor sit amet, consectetur...', 
-      linkImg:'https://images.unsplash.com/photo-1501446529957-6226bd447c46?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1489&q=80',
-    },
-    
-    {
-      id: 2,
-      kind: "Cars",
-      name: 'Car 1',
-      info: 'Lorem ipsum dolor sit amet, consectetuur…',
-      linkImg:  'https://images.unsplash.com/photo-1546768292-fb12f6c92568?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
-    },
-    
-    {
-      id: 3,
-      kind: "Views",
-      name: 'View 2',
-      info: 'Lorem ipsum dolor sit amet, consectetur...',
-      linkImg: 'https://images.unsplash.com/photo-1483729558449-99ef09a8c325?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80',
-    },
-    
-    {
-      id: 4,
-      kind: "Cars",
-      name: 'Car 2',
-      info: 'Lorem ipsum dolor sit amet, consectetur...',
-      linkImg: 'https://images.unsplash.com/photo-1475189778702-5ec9941484ae?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1351&q=80',
-    },
-    
-    {
-      id: 5,
-      kind: "Views",
-      name: 'View 3',
-      info: 'Lorem ipsum dolor sit amet, consectetur...',
-      linkImg: 'https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80',
-    },
-    
-    {
-      id: 6,
-      kind: "Cars",
-      name: 'Car 3',
-      info: 'Lorem ipsum dolor sit amet, consectetur...',
-      linkImg: 'https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80',
-    }
-  ];
+  {
+    id: 1,
+    kind: 'Salads',
+    name: 'Caesar Crunch Salad',
+    info: 'Romaine, parmesan, crunchy croutons, and a creamy house dressing for a classic fresh bite.',
+    price: '$9.99',
+    linkImg: '/images/salads/Salads_Ceasar.webp',
+  },
+  {
+    id: 2,
+    kind: 'Salads',
+    name: 'Greek Garden Salad',
+    info: 'A vibrant mix of cucumbers, olives, feta, tomatoes, and herbs with a lemony finish.',
+    price: '$10.49',
+    linkImg: '/images/salads/Salads_Greek.webp',
+  },
+  {
+    id: 3,
+    kind: 'Wraps',
+    name: 'Buffalo Chicken Wrap',
+    info: 'Spicy chicken, crisp greens, and a cool dressing wrapped in a warm tortilla.',
+    price: '$11.49',
+    linkImg: '/images/wraps/Wraps_BuffaloChicken.webp',
+  },
+  {
+    id: 4,
+    kind: 'Wraps',
+    name: 'Thai Chicken Wrap',
+    info: 'A savoury blend of chicken, crunchy veggies, and a zesty Thai-inspired dressing.',
+    price: '$11.99',
+    linkImg: '/images/wraps/Wraps_Thai.webp',
+  },
+  {
+    id: 5,
+    kind: 'Drinks',
+    name: 'Blueberry Basil Lemonade',
+    info: 'A refreshing lemonade with fresh berries and basil for a bright, fruity finish.',
+    price: '$4.49',
+    linkImg: '/images/Drinks/Drinks_BlueberryBasilLemonade.webp',
+  },
+  {
+    id: 6,
+    kind: 'Sides',
+    name: 'Pita Chips & Hummus',
+    info: 'Crispy pita chips served with smooth hummus and a touch of tangy tapenade.',
+    price: '$5.29',
+    linkImg: '/images/feature-menu/PitaChipsHummusTapanade-1-e1746588129216.webp',
+  },
+];
 
 //   function getUserRole(role) {
 //     if(role === "admin"){

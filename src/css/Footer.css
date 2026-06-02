@@ -1,17 +1,135 @@
-.main_footer{
-    transition: all 0.2s cubic-bezier(0.31, 0.08, 0, 1.96);
-    /* background: #495057; */
-    background: #3A0CA3;
-    /* opacity: 0.4; */
-    color:#fff;
+.main_footer {
+    background:
+        radial-gradient(circle at top, rgba(251, 146, 60, 0.18), transparent 20%),
+        linear-gradient(135deg, #3A0CA3 0%, #4C1D95 45%, #312E81 100%);
+    color: #fff;
+    padding: 2rem 0 0;
 }
 
-.jain_card{
-    background: #E76F51;
-    padding: 2px 5px;
-    font-weight: 500;
+.footer-shell {
+    width: 92%;
+    margin: 0 auto;
+    padding: 1rem 0 2rem;
 }
-  
-.non-jain{
-    color: #31572C;
+
+.footer-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.45rem 0.75rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #fff7ed;
+    font-size: 0.92rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.footer-grid,
+.info-grid {
+    display: grid;
+    gap: 1rem;
+    align-items: stretch;
+}
+
+.footer-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-bottom: 1rem; }
+.info-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+.footer-card,
+.info-card {
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 18px 30px rgba(15, 23, 42, 0.18);
+    padding: 1rem;
+    min-width: 0;
+    backdrop-filter: blur(10px);
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.footer-card:hover,
+.info-card:hover { transform: translateY(-2px); background: rgba(255, 255, 255, 0.12); }
+
+.footer-card--wide { grid-column: span 2; }
+
+.brand-wrap { position: relative; display: inline-flex; align-items: center; }
+.footer-logo { width: 16rem; max-width: 100%; }
+.footer-badge-icon { width: 2rem; position: absolute; top: -4px; right: 36px; }
+
+.footer-copy,
+.footer-links li,
+.info-card p,
+.contact-block a,
+.party-note { color: #f3e8ff; line-height: 1.5; }
+
+.footer-subtitle { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.6rem; color: #fff; }
+
+.delivery-list,
+.footer-links { list-style: none; padding: 0; margin: 0.75rem 0 0; display: grid; gap: 0.55rem; }
+.delivery-list { grid-template-columns: repeat(3, auto); align-items: center; gap: 0.8rem; }
+.delivery-icon { width: 2.5rem; }
+.delivery-icon--wide { width: 5rem; }
+
+.footer-links li { padding: 0.35rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+.footer-links li:last-child { border-bottom: none; }
+
+.info-icon { display: inline-flex; align-items: center; margin-right: 0.35rem; color: #fdba74; }
+.contact-block { display: grid; gap: 0.25rem; margin-bottom: 0.4rem; }
+.contact-block a { text-decoration: none; font-weight: 600; }
+.highlight-text { color: #fdba74; font-weight: 600; }
+
+.jain_card {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 0.35rem;
+    background: #fb923c;
+    padding: 2px 6px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.78rem;
+    color: #fff;
+}
+
+.non-jain { color: #312e81; }
+
+.footer-bottom {
+    margin-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding-top: 0.9rem;
+    text-align: center;
+    color: #ede9fe;
+    font-size: 0.92rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.footer-credit {
+    color: #fdba74;
+    font-weight: 700;
+}
+
+@media (max-width: 1200px) {
+    .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .info-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .footer-card--wide { grid-column: span 2; }
+}
+
+@media (max-width: 768px) {
+    .footer-shell { width: 96%; padding-top: 0.5rem; }
+    .footer-grid,
+    .info-grid { grid-template-columns: 1fr; }
+    .footer-card--wide { grid-column: span 1; }
+    .footer-logo { width: 11rem; }
+    .delivery-list { grid-template-columns: repeat(2, auto); }
+    .delivery-icon--wide { width: 4rem; }
+}
+
+@media (max-width: 480px) {
+    .footer-badge { font-size: 0.8rem; text-align: center; }
+    .delivery-list { grid-template-columns: 1fr; justify-items: start; }
+    .footer-links li { font-size: 0.95rem; }
 }
