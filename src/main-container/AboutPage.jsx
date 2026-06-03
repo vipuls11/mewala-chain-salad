@@ -24,9 +24,9 @@ const AboutPage = () => {
     <main className="about-page-shell mt-16">
       <section className="about-hero-card">
         <div className="about-hero-copy">
-          <p className="about-eyebrow">About Mewala Chain Salad</p>
+          <p className="about-eyebrow">About Mewala Past & Salad</p>
           <h1>Healthy, colorful, and crafted with care.</h1>
-          <p className="about-intro">For over 10 years, Mewala Chain Salad has been serving fresh, wholesome salads that bring comfort and confidence to every plate. What started as a roadside dream by a 35-year-old food lover has grown into a trusted place where delicious salads and happy customers go hand in hand.</p>
+          <p className="about-intro">For over 10 years, Mewala Past & Salad has been serving fresh, wholesome salads that bring comfort and confidence to every plate. What started as a roadside dream by a 35-year-old food lover has grown into a trusted place where delicious salads and happy customers go hand in hand.</p>
           <p className="about-intro">From humble beginnings to a vibrant brand, every bowl carries the story of hard work, passion, and the belief that simple ingredients can create unforgettable taste.</p>
           <div className="about-pill-row">
             <span>10+ years serving salads</span>
@@ -47,7 +47,7 @@ const AboutPage = () => {
         <article className="about-card about-card--wide">
           <p className="about-label">Our story</p>
           <h2>Built around freshness, flavor, and convenience.</h2>
-          <p>Mewala Chain Salad began with a simple goal: to turn humble roadside beginnings into a place where fresh, delicious salads could win hearts. After years of dedication, the journey has grown into a brand loved for its flavor, freshness, and the passion behind every serving.</p>
+          <p>Mewala Past & Salad began with a simple goal: to turn humble roadside beginnings into a place where fresh, delicious salads could win hearts. After years of dedication, the journey has grown into a brand loved for its flavor, freshness, and the passion behind every serving.</p>
         </article>
         <article className="about-card">
           <p className="about-label">Signature promise</p>

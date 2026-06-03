@@ -30,7 +30,7 @@ const Whywechoose = () => {
       <div className="container">
         <div className="section-title text-center md:text-left">
           <h2 className="text-sm uppercase tracking-[0.35em] text-orange-500">Why Us</h2>
-          <p className="mt-2 text-3xl font-black text-slate-800 md:text-4xl">Why Guests Love Mewala Chain Salad</p>
+          <p className="mt-2 text-3xl font-black text-slate-800 md:text-4xl">Why Guests Love Mewala Past & Salad</p>
           <p className="mt-4 max-w-2xl text-[1rem] font-medium leading-7 text-slate-600">A fresh, vibrant dining experience made for health-conscious food lovers, quick bites, and memorable get-togethers.</p>
         </div>
 

@@ -13,7 +13,7 @@ const BannerSection = () => {
         <div className="hero-card">
           <p className="hero-chip">Fresh • Healthy • Full of Flavor</p>
           <h1>
-            Welcome to <span>Mewala Chain Salad</span>
+            Welcome to <span>Mewala Past & Salad</span>
           </h1>
           <h2>Fresh salads, wraps, soups, and daily specials crafted for every craving.</h2>
 
