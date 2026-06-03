@@ -71,7 +71,7 @@ const Footer = () => {
                 </div>
 
                 <div className='footer-bottom'>
-                    © 2026 Mewala Chain Salad. Fresh ingredients, happy cravings.
+                    © 2026 Mewala Past & Salad. Fresh ingredients, happy cravings.
                     <div className='footer-credit'>Developed by digitalwebapp.in</div>
                 </div>
             </div>

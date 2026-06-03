@@ -19,7 +19,7 @@ const Foodlist = () => {
       <div className="w-[92%] mx-auto pb-20">
         <div className="section-title text-center md:text-left">
           <h2>Menu</h2>
-          <p>Fresh picks from Mewala Chain Salad</p>
+          <p>Fresh picks from Mewala Past & Salad</p>
           <p className="mt-3 text-[0.98rem] font-medium leading-7 text-slate-600">A real taste of our salads, wraps, drinks, and sides — all made to feel fresh, colorful, and restaurant-ready.</p>
         </div>
 

@@ -37,7 +37,7 @@
 .contact-copy h1,
 .contact-cta-card h2 {
   color: #0f172a;
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
   line-height: 1.08;
   margin-bottom: 0.75rem;
 }
