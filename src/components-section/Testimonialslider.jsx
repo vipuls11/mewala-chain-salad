@@ -45,7 +45,7 @@ const Testimonialslider = () => {
         <div className="section-title text-center md:text-left">
           <h2>Testimonials</h2>
           <p>What Our Guests Say</p>
-          <p className="mt-3 text-[0.98rem] font-medium leading-7 text-slate-600">Real feedback from guests who enjoy the freshness, flavor, and friendly experience at Mewala Past & Salad.</p>
+          <p className="mt-3 text-[0.98rem] font-medium leading-7 text-slate-600">Real feedback from guests who enjoy the freshness, flavor, and friendly experience at Mewala Pasta & Salad.</p>
         </div>
 
         <div className="slider-container testimonial-slider-shell">
