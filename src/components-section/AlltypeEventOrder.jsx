@@ -35,7 +35,7 @@ const AlltypeEventOrder = () => {
       <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
         {eventCards.map((card) => (
           <article key={card.title} className="overflow-hidden rounded-[28px] border border-orange-100 bg-white shadow-[0_18px_45px_-18px_rgba(124,58,237,0.35)] transition duration-300 hover:-translate-y-1 hover:border-orange-300">
-            <img src={card.image} alt={card.title} className="h-40 w-full object-cover" />
+            <img src={card.image} alt={card.title} className="h-40 w-full object-contain" />
             <div className="p-5">
               <h3 className="text-xl font-bold text-slate-800">{card.title}</h3>
               <p className="mt-2 text-slate-600 leading-6">{card.text}</p>
